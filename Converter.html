@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A project treated like project</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <img src="img/logo.svg" alt="">
+        </a>
+    </nav>
+
+
+    <div id="main-content">
+
+        <section class="section-form">
+
+            <div class="col-lg-6 offset-lg-3 col-md-5 offset-md-1 col-sm-8 offset-sm-2 ">
+                <div class="form-outer">
+                    <ul class="form-nav">
+                        <li>
+                            <a class="active" href="Converter.html">Morse Code</a>
+                        </li>
+
+                        <li>
+                            <a href="nav.html">English</a>
+                        </li>
+
+                    </ul>                                    
+
+                    <div class="input-group">
+                        <textarea class="txt" id="morseCode" placeholder="MorseCode" ></textarea> 
+                    </div>
+
+                    <div class="input-group mb-0" onclick= "decodeMorse(document.getElementById('morseCode').value)">
+                        <button class="btn w-25">
+                            Convert
+                        </button>
+                    </div>
+
+                    <br>
+                    
+                    <div class="input-group">
+                        <textarea class="txt" id="decodedOutput"  placeholder="English text"></textarea>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+
+
+        var MORSE_CODE = {  
+        "-----":"0",
+        ".----":"1",
+        "..---":"2",
+        "...--":"3",
+        "....-":"4",
+        ".....":"5",
+        "-....":"6",
+        "--...":"7",
+        "---..":"8",
+        "----.":"9",
+        ".-":"A",
+        "-...":"B",
+        "-.-.":"C",
+        "-..":"D",
+        ".":"E",
+        "..-.":"F",
+        "--.":"G",
+        "....":"H",
+        "..":"I",
+        ".---":"J",
+        "-.-":"K",
+        ".-..":"L",
+        "--":"M",
+        "-.":"N",
+        "---":"O",
+        ".--.":"P",
+        "--.-":"Q",
+        ".-.":"R",
+        "...":"S",
+        "-":"T",
+        "..-":"U",
+        "...-":"V",
+        ".--":"W",
+        "-..-":"X",
+        "-.--":"Y",
+        "--..":"Z",
+        "-.-.--":"!",
+        ".-.-.-":".",
+        "--..--":",", 
+        "-....-":"-"
+    };
+/*morseCode[i] = morseCode[i].split( " " ); // get single characters
+            
+            for( let a = 0; a < morseCode[i].length; a ++ ) {
+                if( morseCode[i] != " " ) {
+                    result += MORSE_CODE[ morseCode[i][a] ];
+                }
+            }
+            
+            if( i < ( morseCode.length -1 ) ) {  // add space after word
+                result += " ";
+            }
+            
+        }
+        alert(result.trim());
+        
+        document.getElementById("decodedOutput").value = result.trim();*/
+
+    decodeMorse = function(morseCode) {
+        alert(morseCode);       
+        var result = "";
+        alert(morseCode.length); // 29
+        
+        morseCode = morseCode.split( " " ); // get single words
+        alert(morseCode[0])
+        alert(morseCode[1])
+        alert(morseCode[2])
+        alert(morseCode[3])
+        alert(morseCode[4])
+        for( var i = 0; i < morseCode.length; i ++ ) {
+            
+            alert(morseCode[i].split(" "));
+            
+    }}
+
+
+</script>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A project treated like project</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <img src="img/logo.svg" alt="">
+        </a>
+    </nav>
+
+
+    <div id="main-content">
+
+        <section class="section-form">
+
+            <div class="col-lg-6 offset-lg-3 col-md-5 offset-md-1 col-sm-8 offset-sm-2 ">
+                            <div class="form-outer">
+                                    <ul class="form-nav">
+                                        <li>
+                                            <a href="Converter.html" >Morse Code</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="active" href="nav.html">English</a>
+                                        </li>
+
+                                    </ul>                                    
+
+                                    <div class="input-group">
+                                        <textarea class="txt" id="englishText" placeholder="English text"></textarea><!-- type="text" class="txt" name="email" id="email" placeholder="Morse Code"> -->
+                                    </div>
+
+                                    <div class="input-group mb-0" onclick= "encodeMorse(document.getElementById('englishText').value)">
+                                        <button class="btn w-25" onclick="">
+                                            Convert
+                                        </button>
+                                    </div>
+
+                                    <br>
+                                    <div class="input-group">
+                                        <textarea class="txt" id="encodedOutput" name="email" id="email" placeholder="Morse Code"></textarea>
+                                    </div>
+
+                                    
+
+                               
+
+                            </div>
+
+                        </div>
+
+        </section>
+
+    </div>
+
+
+
+    
+</body>
+</html>
+
+<script type="text/javascript">
+
+    var MORSE_CODE = { 
+       "1":".----",    "2":"..---",    "3":"...--",
+       "4":"....-",    "5":".....",    "6":"-....",
+       "7":"--...",    "8":"---..",    "9":"----.",
+       "0":"-----",    "A":".-",       "B":"-...",
+       "C":"-.-.",     "D":"-..",      "E":".",
+       "F":"..-.",     "G":"--.",      "H":"....",
+       "I":"..",       "J":".---",     "K":"-.-",
+       "L":".-..",     "M":"--",       "N":"-.",
+       "O":"---",      "P":".--.",     "Q":"--.-",
+       "R":".-.",      "S":"...",      "T":"-",
+       "U":"..-",      "V":"...-",     "W":".--",
+       "X":"-..-",     "Y":"-.--",     "Z":"--..", 
+       ",":"--..--",   ".":".-.-.-",   "?":"..--..", 
+       ";":"-.-.-",    ":":"---...",   "/":"-..-.", 
+       "-":"-....-",   "`":".----.",   "(":"-.--.", 
+       ")":"-.--.-",   "_":"..--.-",   "@":".--.-.",
+       "!":"-.-.--",   "&":".-...",   "+":".-.-.",
+       "=":"-...-",    "$":"...-..-"
+
+};
+
+    encodeMorse = function(morseCode) {  
+        morseCode = morseCode.toUpperCase();  
+        var result = "";
+        morseCode = morseCode.split( " " ); // get single words
+        for( var i = 0; i < morseCode.length; i ++ ) {
+            var x = morseCode[i];
+            for( let a = 0; a < x.length; a ++) {
+                    result += MORSE_CODE[x[a][0]];
+            }
+            result += " ";    
+        }
+        document.getElementById("encodedOutput").value = result;
+}
+
+</script>

@@ -17,7 +17,7 @@
 
     <nav id="navbar">
         <a href="#" class="nav-logo">
-            <img src="img/logo.svg" alt="">
+            <img src="img/logo1.svg" alt="">
         </a>
     </nav>
 
@@ -90,18 +90,24 @@
         "-.-.--":"!",   ".-.-.-":".",   "--..--":",",  
         "-....-":"-",   "...-..-":"$",   "..--..":"?",    
         "-.-.-":";",    "---...":":",   "-..-.":"/", 
-        ".----.":"`",   "-.--.":"(", 
-        "-.--.-":")",   "..--.-":"_",   ".--.-.":"@",
-        ".-...":"&",    ".-.-.":"+",    "-...-":"=",    
+        ".----.":"`",   "-.--.":"(",    "-.--.-":")",   
+        "..--.-":"_",   ".--.-.":"@",   ".-...":"&",    
+        ".-.-.":"+",    "-...-":"=",    
     };
 
+    //To Convert Morse code to English Text Engish text
     decodeMorse = function( morseCode ) {
+
+        //To split words
         morseCode = morseCode.split( "   " ); 
         var result = "";
         
+        //Run on each each word exclusively
         for( var i = 0; i < morseCode.length; i ++ ) {
+            //To split each letter' codes from the word
             morseCode[i] = morseCode[i].split( " " ); 
-            
+            alert(morseCode[i])
+            //
             for( let a = 0; a < morseCode[i].length; a ++ ) {
                 if( morseCode[i][a] != "" ) {
                     result += MORSE_CODE[ morseCode[i][a] ];

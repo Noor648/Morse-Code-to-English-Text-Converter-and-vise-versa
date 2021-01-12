@@ -17,7 +17,7 @@
 
     <nav id="navbar">
         <a href="#" class="nav-logo">
-            <img src="img/logo.svg" alt="">
+            <img src="img/logo2.svg" alt="">
         </a>
     </nav>
 
@@ -96,17 +96,31 @@
 
 };
 
-    encodeMorse = function(morseCode) {  
+    //To Convert Engish text to Morse Code
+    encodeMorse = function(morseCode) {
+        //To Capitalize the English Text.  
         morseCode = morseCode.toUpperCase();  
         var result = "";
-        morseCode = morseCode.split( " " ); // get single words
+
+        //To seperate each word from sentence 
+        morseCode = morseCode.split( " " );
+
+        //Will run on each word exclusively
         for( var i = 0; i < morseCode.length; i ++ ) {
             var x = morseCode[i];
+
+            //Will Run on each letter of the word exclusively
             for( let a = 0; a < x.length; a ++) {
+
+                    //Concatination along with the
+                    //Search for the code(Value) of each letter(key)
+                    //From the above created key:value pairs
                     result += MORSE_CODE[x[a][0]] + "  ";
             }
             result += "     ";    
         }
+
+        //To display output
         document.getElementById("encodedOutput").value = result;
 }
 

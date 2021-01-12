@@ -34,7 +34,7 @@
                         </li>
 
                         <li>
-                            <a href="nav.html">English</a>
+                            <a href="Conv.html">English</a>
                         </li>
 
                     </ul>                                    
@@ -75,80 +75,47 @@
 
 
         var MORSE_CODE = {  
-        "-----":"0",
-        ".----":"1",
-        "..---":"2",
-        "...--":"3",
-        "....-":"4",
-        ".....":"5",
-        "-....":"6",
-        "--...":"7",
-        "---..":"8",
-        "----.":"9",
-        ".-":"A",
-        "-...":"B",
-        "-.-.":"C",
-        "-..":"D",
-        ".":"E",
-        "..-.":"F",
-        "--.":"G",
-        "....":"H",
-        "..":"I",
-        ".---":"J",
-        "-.-":"K",
-        ".-..":"L",
-        "--":"M",
-        "-.":"N",
-        "---":"O",
-        ".--.":"P",
-        "--.-":"Q",
-        ".-.":"R",
-        "...":"S",
-        "-":"T",
-        "..-":"U",
-        "...-":"V",
-        ".--":"W",
-        "-..-":"X",
-        "-.--":"Y",
-        "--..":"Z",
-        "-.-.--":"!",
-        ".-.-.-":".",
-        "--..--":",", 
-        "-....-":"-"
+        "-----":"0",    ".----":"1",    "..---":"2",
+        "...--":"3",    "....-":"4",    ".....":"5",
+        "-....":"6",    "--...":"7",    "---..":"8",
+        "----.":"9",    ".-":"A",       "-...":"B",
+        "-.-.":"C",     "-..":"D",      ".":"E",
+        "..-.":"F",     "--.":"G",      "....":"H",
+        "..":"I",       ".---":"J",     "-.-":"K",
+        ".-..":"L",     "--":"M",       "-.":"N",
+        "---":"O",      ".--.":"P",     "--.-":"Q",
+        ".-.":"R",      "...":"S",      "-":"T",
+        "..-":"U",      "...-":"V",     ".--":"W",
+        "-..-":"X",     "-.--":"Y",     "--..":"Z",     
+        "-.-.--":"!",   ".-.-.-":".",   "--..--":",",  
+        "-....-":"-",   "...-..-":"$",   "..--..":"?",    
+        "-.-.-":";",    "---...":":",   "-..-.":"/", 
+        ".----.":"`",   "-.--.":"(", 
+        "-.--.-":")",   "..--.-":"_",   ".--.-.":"@",
+        ".-...":"&",    ".-.-.":"+",    "-...-":"=",    
     };
-/*morseCode[i] = morseCode[i].split( " " ); // get single characters
+
+    decodeMorse = function( morseCode ) {
+        morseCode = morseCode.split( "   " ); 
+        var result = "";
+        
+        for( var i = 0; i < morseCode.length; i ++ ) {
+            morseCode[i] = morseCode[i].split( " " ); 
             
             for( let a = 0; a < morseCode[i].length; a ++ ) {
-                if( morseCode[i] != " " ) {
+                if( morseCode[i][a] != "" ) {
                     result += MORSE_CODE[ morseCode[i][a] ];
                 }
             }
             
-            if( i < ( morseCode.length -1 ) ) {  // add space after word
+            if( i < ( morseCode.length -1 ) ) { 
                 result += " ";
             }
             
         }
-        alert(result.trim());
         
-        document.getElementById("decodedOutput").value = result.trim();*/
-
-    decodeMorse = function(morseCode) {
-        alert(morseCode);       
-        var result = "";
-        alert(morseCode.length); // 29
-        
-        morseCode = morseCode.split( " " ); // get single words
-        alert(morseCode[0])
-        alert(morseCode[1])
-        alert(morseCode[2])
-        alert(morseCode[3])
-        alert(morseCode[4])
-        for( var i = 0; i < morseCode.length; i ++ ) {
-            
-            alert(morseCode[i].split(" "));
-            
-    }}
+        document.getElementById("decodedOutput").value = result.trim();
+    }
 
 
 </script>

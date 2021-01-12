@@ -30,11 +30,11 @@
                 <div class="form-outer">
                     <ul class="form-nav">
                         <li>
-                            <a class="active" href="Converter.html">Morse Code</a>
+                            <a class="active" href="Decoder.html">Morse Code</a>
                         </li>
 
                         <li>
-                            <a href="Conv.html">English</a>
+                            <a href="Encoder.html">English</a>
                         </li>
 
                     </ul>                                    
@@ -71,9 +71,6 @@
 
 <script type="text/javascript">
 
-
-
-
         var MORSE_CODE = {  
         "-----":"0",    ".----":"1",    "..---":"2",
         "...--":"3",    "....-":"4",    ".....":"5",
@@ -101,15 +98,23 @@
         //To split words
         morseCode = morseCode.split( "   " ); 
         var result = "";
+        alert(morseCode);
         
-        //Run on each each word exclusively
+        //Runs on each each word exclusively
         for( var i = 0; i < morseCode.length; i ++ ) {
             //To split each letter' codes from the word
             morseCode[i] = morseCode[i].split( " " ); 
             alert(morseCode[i])
-            //
+            
+            //Runs on each letter exclusivey
             for( let a = 0; a < morseCode[i].length; a ++ ) {
+
+                //To ignore empty areas
                 if( morseCode[i][a] != "" ) {
+
+                    //Concatination along with the
+                    //Search for letter(Value) for each code(key)
+                    //From the above created key:value pairs
                     result += MORSE_CODE[ morseCode[i][a] ];
                 }
             }
@@ -119,8 +124,8 @@
             }
             
         }
-        
-        document.getElementById("decodedOutput").value = result.trim();
+        //To display output
+        document.getElementById("decodedOutput").value = result;
     }
 
 

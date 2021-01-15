@@ -98,13 +98,11 @@
         //To split words
         morseCode = morseCode.split( "   " ); 
         var result = "";
-        alert(morseCode);
         
         //Runs on each each word exclusively
         for( var i = 0; i < morseCode.length; i ++ ) {
             //To split each letter' codes from the word
-            morseCode[i] = morseCode[i].split( " " ); 
-            alert(morseCode[i])
+            morseCode[i] = morseCode[i].split( " " );
             
             //Runs on each letter exclusivey
             for( let a = 0; a < morseCode[i].length; a ++ ) {

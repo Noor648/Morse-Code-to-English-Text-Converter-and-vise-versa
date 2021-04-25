@@ -1,4 +1,4 @@
->> Morse Code to English Text Converter and vise versa
+Morse Code to English Text Converter and vise versa
 
 The project consists of two parts one is "Decoder" that decodes English text to Morse code and the other one is "Encoder" to for the conversion of Morse code to English text.
 Their logics are explained as below,

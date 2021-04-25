@@ -4,7 +4,7 @@ The project consists of two parts one is "Decoder" that decodes English text to 
 Their logics are explained as below,
 
   1. Decoder:
-     Break down of coded sentences into words.\n
+     Break down of coded sentences into words.<br/>
      Breakdown of each coded word into letters\n
      Each Letter of a single word is decoded one at a time.\n
      After one word is decoded completed, it goes for the next word until all of the Morse code is decoded.\n
